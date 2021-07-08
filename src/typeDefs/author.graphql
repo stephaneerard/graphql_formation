@@ -1,0 +1,5 @@
+type Author {
+  name: String!
+  nbBooks: Int
+  relatedAuthors: [Author]
+}
