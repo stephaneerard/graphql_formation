@@ -1,9 +1,5 @@
-type BimObject {
+type Software {
   id: ID!
-}
-
-type BimObjectFilter {
-  classificationNodeId: ID
-  softwareId: ID
+  name: String!
 }
 

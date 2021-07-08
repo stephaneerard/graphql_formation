@@ -1,12 +1,11 @@
 type BimObject {
-  id: ID!
-  name: String
-  models: [
-    Model!
-  ]!
+    id: ID!
+    name: String!
+    models: [BimObjectModel!]!
+    classificationNodes: [ClassificationNode!]!
 }
 
-type BimObjectFilter {
+input BimObjectFilter {
   classificationNodeId: ID
   softwareId: ID
 }

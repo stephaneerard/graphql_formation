@@ -1,0 +1,8 @@
+type ClassificationNode {
+    id: ID!
+    name:String!
+    classification: Classification!
+    parent: ClassificationNode
+    children: [ClassificationNode!]!
+}
+

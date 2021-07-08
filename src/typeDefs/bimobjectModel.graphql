@@ -1,0 +1,6 @@
+type BimObjectModel {
+    id: ID!
+    name: String!
+    software: Software!
+}
+
