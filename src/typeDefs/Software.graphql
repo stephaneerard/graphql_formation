@@ -1,0 +1,9 @@
+type BimObject {
+  id: ID!
+}
+
+type BimObjectFilter {
+  classificationNodeId: ID
+  softwareId: ID
+}
+

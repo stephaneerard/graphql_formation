@@ -1,0 +1,6 @@
+type Model {
+  id: ID!
+  name: String!
+  software: Software
+}
+

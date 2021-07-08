@@ -1,0 +1,13 @@
+type BimObject {
+  id: ID!
+  name: String
+  models: [
+    Model!
+  ]!
+}
+
+type BimObjectFilter {
+  classificationNodeId: ID
+  softwareId: ID
+}
+
