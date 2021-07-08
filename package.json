@@ -32,10 +32,14 @@
     ]
   },
   "dependencies": {
+    "apollo-datasource": "^0.9.0",
     "apollo-server": "^2.9.14",
+    "dataloader": "^2.0.0",
     "graphql": "^14.5.8",
     "graphql-type-json": "^0.3.1",
-    "merge-graphql-schemas": "^1.7.4"
+    "knex": "^0.95.6",
+    "merge-graphql-schemas": "^1.7.4",
+    "pg": "^8.6.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.1.5",
