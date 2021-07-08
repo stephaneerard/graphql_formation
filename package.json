@@ -1,0 +1,58 @@
+{
+  "name": "formation",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "watch": "nodemon --exec babel-node ./src/index.js",
+    "watch:test": "NODE_ENV=test yarn watch",
+    "lint": "eslint .",
+    "prettier": "prettier --write '**/{*.{js?(on),ts,y?(a)ml,graphql,md},.*.y?(a)ml,.*.json,.prettierrc,.eslintrc}'",
+    "build": "babel -d ./build ./src --copy-files",
+    "prebuild": "rm -rf build/*",
+    "start": "./node_modules/pm2/bin/pm2-runtime ./build/index.js --max-memory-restart 1G --cron '0 3 * * *' -i 2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged && lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  },
+  "jest": {
+    "rootDir": "src",
+    "clearMocks": true,
+    "setupFilesAfterEnv": [
+      "../test/testSetup"
+    ]
+  },
+  "dependencies": {
+    "apollo-server": "^2.9.14",
+    "graphql": "^14.5.8",
+    "graphql-type-json": "^0.3.1",
+    "merge-graphql-schemas": "^1.7.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.1.5",
+    "@babel/core": "^7.1.6",
+    "@babel/node": "^7.0.0",
+    "@babel/preset-env": "^7.1.6",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-eslint": "^10.0.1",
+    "babel-jest": "^25.0.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^3.0.0",
+    "nodemon": "^2.0.1",
+    "prettier": "1.19.1",
+    "pretty-quick": "^2.0.1"
+  }
+}
